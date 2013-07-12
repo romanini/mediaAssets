@@ -9,6 +9,18 @@ actual resizing. The focus of your application should be in excellent
 management of the upload process and on providing a sane service for
 automated use; a user interface is unnecessary.
 
+To uplaod call:
+
+/upload.php  -- passing in Filedata with the post request
+
+To get the original image call:
+
+/getImage.php -- passing in id= with the media ID you got back from upload.php
+
+To get the thumb-nail call:
+
+/getThumbnail.php -- passing in id, height, width, and desired extension.
+
 
 To make this work you should add the following to your mySQL server:
 
