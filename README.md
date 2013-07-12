@@ -9,20 +9,11 @@ actual resizing. The focus of your application should be in excellent
 management of the upload process and on providing a sane service for
 automated use; a user interface is unnecessary.
 
-To uplaod call:
+To make this work you first need to point a web servers's doc root to:
 
-/upload.php  -- passing in Filedata with the post request
+./webroot
 
-To get the original image call:
-
-/getImage.php -- passing in id= with the media ID you got back from upload.php
-
-To get the thumb-nail call:
-
-/getThumbnail.php -- passing in id, height, width, and desired extension.
-
-
-To make this work you should add the following to your mySQL server:
+Second you need to add the following to your mySQL server:
 
 GRANT ALL PRIVILEGES ON *.* TO 'guest'@'localhost' IDENTIFIED BY PASSWORD '*11DB58B0DD02E290377535868405F11E4CBEFF58'
 
@@ -36,4 +27,16 @@ CREATE TABLE `asset` (
 ) ENGINE=InnoDB
 
 if you wish to use a mysql server on some other host you will need to edit the constants in model/Image.php
+
+To uplaod call:
+
+/upload.php  -- passing in Filedata with the post request
+
+To get the original image call:
+
+/getImage.php -- passing in id= with the media ID you got back from upload.php
+
+To get the thumb-nail call:
+
+/getThumbnail.php -- passing in id, height, width, and desired extension.
 
